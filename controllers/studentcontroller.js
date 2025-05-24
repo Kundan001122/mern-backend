@@ -1,4 +1,5 @@
 import Student from "../models/addstudent.js";
+import bcrypt from 'bcryptjs';
 
 // Create a new student (Add)
 export async function addstudentController(req, res) {
