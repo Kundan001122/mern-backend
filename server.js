@@ -7,6 +7,8 @@ import studentRoutes from './routes/studentRoutes.js'
 import userRoutes from "./routes/userRoutes.js";
 import connectDB from "./config/connectDB.js";
 import { updatestudentController } from "./controllers/studentcontroller.js";
+import admin from "./routes/admin.js"
+import adminRoutes from './routes/adminRoutes.js';
 
 dotenv.config();
 
@@ -27,7 +29,9 @@ app.use("/api/users", userRoutes);
 //******************student routes
 app.use("/api/users", studentRoutes);
 app.use("/api/users/updatestudent/:id", updatestudentController);
-
+//Admin Routes
+app.use("/api/admin", admin);
+app.use('/api/admin', adminRoutes);
 // *****************Root route
 app.get("/", (req, res) => {
     res.json({ message: "Server running" });
